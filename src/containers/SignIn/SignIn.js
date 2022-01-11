@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
-import Authenticate from '../../presentation/Authenticate/Authenticate';
-// import { signInUser } from '../../services/users';
+import Auth from '../../presentation/Auth/Auth';
+import { signInUser } from '../../services/users';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const resp = await signInUser(email, password);
+    try {
+      const resp = await signInUser(email, password);
+      console.log(resp);
+    } catch {
+      setErrorMessage('Something went wrong.');
+    }
   };
 
   return (
     <div>
-      <Authenticate
+      <Auth
         email={email}
         setEmail={setEmail}
         password={password}
         setPassword={setPassword}
         handleSubmit={handleSubmit}
+        errorMessage={errorMessage}
       />
     </div>
   );

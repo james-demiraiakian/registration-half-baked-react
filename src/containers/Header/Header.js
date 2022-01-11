@@ -5,8 +5,8 @@ export default function Header() {
   return (
     <div>
       Header
-      <NavLink to="/signin">Log In</NavLink>
-      <NavLink to="/signup">Regestrare</NavLink>
+      <NavLink to="/SignIn">Log In</NavLink>
+      <NavLink to="/SignUp">Regestrare</NavLink>
     </div>
   );
 }
