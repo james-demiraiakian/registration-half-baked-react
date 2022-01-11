@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Authenticate from '../../presentation/Authenticate/Authenticate';
-import { signInUser } from '../../services/users';
+// import { signInUser } from '../../services/users';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -8,8 +8,7 @@ export default function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const resp = await signInUser(email, password);
-    console.log(resp);
+    // const resp = await signInUser(email, password);
   };
 
   return (
