@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import SignIn from './containers/SignIn/SignIn';
 import Authenticate from './presentation/Authenticate/Authenticate';
-import Header from './presentation/Header/Header';
+import Header from './containers/Header/Header';
 
 function App() {
   return (
@@ -10,7 +10,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/" component={Authenticate}>
+          <Route exact path="/" />
+          <Route exact path="/signin" component={Authenticate}>
             <SignIn />
           </Route>
         </Switch>
