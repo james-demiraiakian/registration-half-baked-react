@@ -3,7 +3,7 @@ import { signInUser, signUpUser } from '../../services/users';
 import classNames from 'classnames';
 import Auth from '../../presentation/Auth/Auth';
 
-export default function Authenticate(setCurrentUser) {
+export default function Authenticate({ setCurrentUser }) {
   const [errorMessage, setErrorMessage] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,11 +33,11 @@ export default function Authenticate(setCurrentUser) {
         </h3>
         <h3
           onClick={() => {
-            setAction('signOut');
+            setAction('signUp');
           }}
-          className={classNames({ active: action === 'signOut' })}
+          className={classNames({ active: action === 'signUp' })}
         >
-          Sign Out
+          Sign Up
         </h3>
       </div>
       <div>Action: {action}</div>
